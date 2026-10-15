@@ -1,0 +1,74 @@
+[
+  {
+    "url": "http://127.0.0.1:4173/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_-2026_10_15_03_34_31.report.html",
+    "jsonPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_-2026_10_15_03_34_31.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_-2026_10_15_03_34_58.report.html",
+    "jsonPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_-2026_10_15_03_34_58.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/nft/emerald-ape-042",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_nft_emerald_ape_042-2026_10_15_03_35_23.report.html",
+    "jsonPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_nft_emerald_ape_042-2026_10_15_03_35_23.report.json",
+    "summary": {
+      "performance": 0.91,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/nft/emerald-ape-042",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_nft_emerald_ape_042-2026_10_15_03_35_36.report.html",
+    "jsonPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_nft_emerald_ape_042-2026_10_15_03_35_36.report.json",
+    "summary": {
+      "performance": 0.91,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_-2026_10_15_03_34_45.report.html",
+    "jsonPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_-2026_10_15_03_34_45.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://127.0.0.1:4173/nft/emerald-ape-042",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_nft_emerald_ape_042-2026_10_15_03_35_11.report.html",
+    "jsonPath": "C:\\Users\\georg\\Downloads\\kurio-nft-marketplace\\kurio\\lighthouse\\reports\\mobile\\127_0_0_1-_nft_emerald_ape_042-2026_10_15_03_35_11.report.json",
+    "summary": {
+      "performance": 0.91,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  }
+]

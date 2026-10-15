@@ -1,0 +1,71 @@
+{
+  "name": "kurio-nft-marketplace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview --port 4173",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json",
+    "lint": "eslint .",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "test:e2e:report": "playwright show-report",
+    "lighthouse": "npm run build && npm run lighthouse:mobile && npm run lighthouse:desktop && node scripts/lighthouse-median.mjs",
+    "msw:init": "msw init public --save",
+    "lighthouse:mobile": "lhci collect --config=lighthouserc.cjs && lhci upload --config=lighthouserc.cjs",
+    "lighthouse:desktop": "LH_PRESET=desktop lhci collect --config=lighthouserc.cjs && LH_PRESET=desktop lhci upload --config=lighthouserc.cjs",
+    "test:e2e:ui": "playwright test --ui",
+    "dev:nomocks": "VITE_ENABLE_MOCKS=false vite"
+  },
+  "dependencies": {
+    "@fontsource/roboto-mono": "5.1.0",
+    "@radix-ui/react-dialog": "1.1.4",
+    "@radix-ui/react-slot": "1.1.1",
+    "@tanstack/react-query": "5.62.8",
+    "@tanstack/react-router": "1.92.6",
+    "axios": "1.7.9",
+    "big.js": "6.2.2",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "socket.io-client": "4.8.1",
+    "sonner": "1.7.1",
+    "tailwind-merge": "2.6.0",
+    "zod": "3.24.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.17.0",
+    "@lhci/cli": "0.14.0",
+    "@mswjs/socket.io-binding": "0.2.0",
+    "@playwright/test": "1.49.1",
+    "@types/big.js": "6.2.2",
+    "@types/node": "22.10.2",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-react": "4.3.4",
+    "autoprefixer": "10.4.20",
+    "cross-env": "^10.1.0",
+    "eslint": "9.17.0",
+    "eslint-plugin-react-hooks": "5.1.0",
+    "globals": "15.14.0",
+    "msw": "2.10.4",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
+    "tailwindcss-animate": "1.0.7",
+    "typescript": "5.7.2",
+    "typescript-eslint": "8.18.2",
+    "vite": "6.0.5"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}

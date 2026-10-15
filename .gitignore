@@ -1,0 +1,8 @@
+node_modules
+dist
+.env.local
+test-results
+playwright-report
+.lighthouseci
+lighthouse/reports/*
+!lighthouse/reports/.gitkeep

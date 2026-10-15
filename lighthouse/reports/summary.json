@@ -1,0 +1,58 @@
+[
+  {
+    "profile": "mobile",
+    "url": "http://127.0.0.1:4173/",
+    "runs": 3,
+    "performance": 70,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "lcpMs": 3478,
+    "cls": 0,
+    "tbtMs": 803,
+    "lighthouse": "12.1.0",
+    "chrome": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+  },
+  {
+    "profile": "mobile",
+    "url": "http://127.0.0.1:4173/nft/emerald-ape-042",
+    "runs": 3,
+    "performance": 73,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "lcpMs": 3380,
+    "cls": 0.018,
+    "tbtMs": 697,
+    "lighthouse": "12.1.0",
+    "chrome": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+  },
+  {
+    "profile": "desktop",
+    "url": "http://127.0.0.1:4173/",
+    "runs": 3,
+    "performance": 74,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "lcpMs": 970,
+    "cls": 0,
+    "tbtMs": 595,
+    "lighthouse": "12.1.0",
+    "chrome": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+  },
+  {
+    "profile": "desktop",
+    "url": "http://127.0.0.1:4173/nft/emerald-ape-042",
+    "runs": 3,
+    "performance": 84,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "lcpMs": 1030,
+    "cls": 0.104,
+    "tbtMs": 286,
+    "lighthouse": "12.1.0",
+    "chrome": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36"
+  }
+]

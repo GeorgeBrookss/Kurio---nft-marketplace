@@ -1,0 +1,70 @@
+import { addToCart, expect, login, mock, test, USERS } from './fixtures'
+
+test.describe('Conta e sessão', () => {
+  test('cadastro valida campos e trata conflito de e-mail @mobile', async ({ page }) => {
+    await page.goto('/cadastro')
+    const submit = page.locator('main').getByRole('button', { name: 'Criar conta' })
+    await submit.click()
+    await expect(page.getByText('Mínimo de 3 caracteres')).toBeVisible()
+    await expect(page.locator('#register-username')).toBeFocused()
+
+    await page.getByPlaceholder('Nome de usuário').fill('nova.pessoa')
+    await page.getByPlaceholder('Digite seu e-mail', { exact: true }).fill(USERS.ana.email)
+    await page.getByPlaceholder('Senha', { exact: true }).fill('Senha1234')
+    await page.getByPlaceholder('Confirmar senha').fill('Senha1234')
+    await submit.click()
+    await expect(page.getByText('E-mail já cadastrado')).toBeVisible()
+
+    await page.getByPlaceholder('Digite seu e-mail', { exact: true }).fill('nova@kurio.dev')
+    await submit.click()
+    await expect(page.getByText('Perfil de colecionador criado.')).toBeVisible()
+  })
+
+  test('login inválido, sessão após refresh, logout limpa dados privados', async ({ page }) => {
+    await page.goto('/entrar')
+    await page.getByPlaceholder('contato@email.com').fill(USERS.ana.email)
+    await page.getByPlaceholder('Senha').fill('errada123')
+    await page.locator('main').getByRole('button', { name: 'Entrar', exact: true }).click()
+    await expect(page.getByText('E-mail ou senha incorretos.')).toBeVisible()
+
+    await login(page)
+    await page.reload()
+    await expect(page.getByRole('link', { name: USERS.ana.username })).toBeVisible()
+    await page.goto('/perfil')
+    await expect(page.locator('#profile-displayName')).toHaveValue('Ana Colecionadora')
+    await page.getByRole('button', { name: 'Sair' }).click()
+    await expect(page).toHaveURL(/\/$/)
+    await page.goto('/perfil')
+    await expect(page).toHaveURL(/\/entrar\?redirect/)
+  })
+
+  test('expiração durante o checkout preserva o contexto e retoma após login', async ({ page }) => {
+    await login(page)
+    await addToCart(page, 'emerald-ape-042')
+    await page.goto('/checkout')
+    await page.locator('#collector-note').fill('presente para mim')
+    await mock(page, '/__mock/session/expire')
+    await page.getByRole('button', { name: 'Conectar carteira' }).click()
+    await expect(page).toHaveURL(/\/entrar\?.*expired=true/)
+    await expect(page.getByRole('alert').filter({ hasText: 'Sua sessão expirou' })).toBeVisible()
+    await page.getByPlaceholder('contato@email.com').fill(USERS.ana.email)
+    await page.getByPlaceholder('Senha').fill(USERS.ana.password)
+    await page.locator('main').getByRole('button', { name: 'Entrar', exact: true }).click()
+    await expect(page).toHaveURL(/\/checkout/)
+    await expect(page.locator('#collector-note')).toHaveValue('presente para mim')
+    await expect(page.getByText('Emerald Ape #042')).toBeVisible()
+  })
+
+  test('troca de usuário não expõe dados do anterior', async ({ page }) => {
+    await login(page)
+    await page.goto('/perfil/interesse')
+    await expect(page.getByText('Emerald Ape #042')).toBeVisible()
+    await page.goto('/perfil')
+    await page.getByRole('button', { name: 'Sair' }).click()
+    await login(page, USERS.bruno)
+    await page.goto('/perfil/interesse')
+    await expect(page.getByText('Nenhum favorito ainda.')).toBeVisible()
+    await page.goto('/perfil')
+    await expect(page.locator('#profile-displayName')).toHaveValue('Bruno NFT')
+  })
+})
